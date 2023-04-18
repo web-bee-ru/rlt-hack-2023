@@ -1,0 +1,15 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model okpd {
+  id   Int     @id @default(autoincrement())
+  code String? @db.VarChar(20)
+  name String? @db.VarChar(500)
+}
